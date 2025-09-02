@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Phishing Detection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Email Phishing Detection System</h1>
+            <p class="header-subtitle">AI-powered email security analysis using BERT transformer model</p>
+            <div class="model-info">
+                <span class="status status--info">Model: BERT Fine-tuned</span>
+                <span class="status status--success">Accuracy: 97.17%</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="analysis-section">
+                <div class="input-section card">
+                    <div class="card__header">
+                        <h2>Email Analysis</h2>
+                        <p class="text-secondary">Paste your email content below for phishing detection analysis</p>
+                    </div>
+                    <div class="card__body">
+                        <!-- Sample Email Selector -->
+                        <div class="form-group">
+                            <label class="form-label">Quick Test (Optional)</label>
+                            <select class="form-control" id="sampleEmailSelect">
+                                <option value="">Select a sample email to test...</option>
+                                <option value="phishing1">🚨 Phishing: Account Suspension Warning</option>
+                                <option value="phishing2">🚨 Phishing: Lottery Winner Scam</option>
+                                <option value="legitimate1">✅ Legitimate: Bank Statement</option>
+                                <option value="legitimate2">✅ Legitimate: Meeting Reminder</option>
+                            </select>
+                        </div>
+
+                        <!-- Email Input Form -->
+                        <form id="emailAnalysisForm" class="email-form">
+                            <div class="form-group">
+                                <label for="emailSubject" class="form-label">Email Subject</label>
+                                <input type="text" id="emailSubject" class="form-control" placeholder="Enter email subject...">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emailContent" class="form-label">Email Content</label>
+                                <textarea 
+                                    id="emailContent" 
+                                    class="form-control email-textarea" 
+                                    placeholder="Paste the email content here for analysis..."
+                                    required
+                                    rows="10"
+                                ></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary btn--full-width" id="analyzeBtn">
+                                    <span class="btn-text">Analyze Email</span>
+                                    <span class="btn-loading hidden">Analyzing...</span>
+                                </button>
+                                <button type="button" class="btn btn--secondary" id="clearBtn">Clear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section card hidden" id="resultsSection">
+                    <div class="card__header">
+                        <h3>Analysis Results</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="result-display">
+                            <div class="result-status" id="resultStatus">
+                                <!-- Result will be inserted here -->
+                            </div>
+                            <div class="confidence-score" id="confidenceScore">
+                                <!-- Confidence score will be inserted here -->
+                            </div>
+                            <div class="result-explanation" id="resultExplanation">
+                                <!-- Explanation will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Section -->
+                <div class="error-section card hidden" id="errorSection">
+                    <div class="card__body">
+                        <div class="error-message">
+                            <h4>Analysis Error</h4>
+                            <p id="errorMessage">An error occurred during analysis. Please try again.</p>
+                            <button class="btn btn--secondary" id="retryBtn">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <aside class="info-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h3>How it Works</h3>
+                    </div>
+                    <div class="card__body">
+                        <div class="info-content">
+                            <div class="info-item">
+                                <h4>🤖 AI-Powered Analysis</h4>
+                                <p>Uses BERT transformer model fine-tuned on phishing email datasets</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>⚡ Real-time Detection</h4>
+                                <p>Instantly analyzes email content for suspicious patterns and language</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>📊 Confidence Scoring</h4>
+                                <p>Provides percentage confidence for each classification decision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__header">
+                        <h3>Warning Signs</h3>
+                    </div>
+                    <div class="card__body">
+                        <ul class="warning-list">
+                            <li>Urgent action required</li>
+                            <li>Suspicious links or attachments</li>
+                            <li>Requests for personal information</li>
+                            <li>Poor grammar or spelling</li>
+                            <li>Unexpected prizes or offers</li>
+                            <li>Threatening consequences</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Email Phishing Detection System. Powered by BERT AI Technology.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
